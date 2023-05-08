@@ -1,0 +1,78 @@
+# THb2
+package tuan2.bai1;
+
+/**
+ *
+ * @author MSI-PC
+ */
+import java.text.NumberFormat;
+
+public class Account {
+    private long accountNumber;
+    private String accountName;
+    private double balance;
+    private String status;
+
+    // Default constructor
+    public Account() {
+        this(999999, "Chưa xác định", 50.0);
+    }
+
+    // Constructor with three parameters
+    public Account(long accountNumber, String accountName, double balance) {
+        this.accountNumber = accountNumber;
+        this.accountName = accountName;
+        this.balance = balance;
+        this.status = "Active";
+    }
+
+    // Constructor with all four parameters
+    public Account(long accountNumber, String accountName, double balance, String status) {
+        this.accountNumber = accountNumber;
+        this.accountName = accountName;
+        this.balance = balance;
+        this.status = status;
+    }
+
+    // Getter and setter methods
+    public long getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(long accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    // toString method to display all account information
+    public String toString() {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        return "Account Number: " + accountNumber + "\n"
+            + "Account Name: " + accountName + "\n"
+            + "Balance: " + formatter.format(balance) + "\n"
+            + "Status: " + status;
+    }
+}
